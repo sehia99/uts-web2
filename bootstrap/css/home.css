@@ -1,0 +1,68 @@
+.panel-group{
+  	padding-top: 20px;
+  }
+  .panel, .panel-heading{
+  	background-color: #f5f5f5; 
+  }
+  .navbar{
+  	 border-right: 1px solid #111;
+  	background-color: #f5f5f5;
+  	position: fixed;
+  	top:0;
+  	width: 100%;
+  	z-index: 1;
+  }
+  .sidenav>a:hover,
+  .sidenav>a,
+  .sidenav>a:focus{
+  	color: #111;
+  	text-decoration: none;
+  }
+  .sidenav {
+  	border-right: 1px solid #eee;
+  	color:#111;
+    height: 100%;
+    width: 330px;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+    padding-top: 0px;
+}
+
+.panel-title>a:hover{
+	color: #000;
+}
+  .panel-title>a,
+  .panel-title>a:focus{
+  	color: #555;
+  	text-decoration: none;
+  }
+
+.panel-body>a:hover{
+	color: #000;
+}
+  .panel-body>a,
+  .panel-body>a:focus{
+  	color: #555;
+  	text-decoration: none;
+  }
+
+.main {
+    margin-left: 340px; /* Same as the width of the sidenav */
+    font-size: 16px; /* Increased text to enable scrolling */
+    padding: 30px 10px;
+
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+@media screen and (max-height: 450px) {
+    .sidenav {padding-bottom: : 60px;}
+    .sidenav a {font-size: 18px;}
+}
