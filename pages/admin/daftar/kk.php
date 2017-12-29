@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if (!isset($_SESSION['username'])) {
+  // jika user belum login
+  header('Location: ../login');
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,14 +73,15 @@ $data=$list->fetchAll();
 			</form>
 <?php 
  	if (isset($_POST['simpan'])) {
- 	$no_kk=$_POST['no_kk'];
+ 	  $no_kk=$_POST['no_kk'];
     $nik_kepala=$_POST['nik_kepala'];
     $alamat=$_POST['alamat'];
     $rtrw=$_POST['rtrw'];
     $kelu=$_POST['kelu'];
     $keca=$_POST['keca'];
 	$kabu=$_POST['kabu'];
-	$sql=$query->prepare("insert into kartu_k(no_kk,nik_kepala,alamat,rtrw,kelu,keca,kabu)values(:no_kk,:nik_kepala,:alamat,:rtrw,:kelu,:keca,:kabu)");
+  $user=$_SESSION['username'];
+	$sql=$query->prepare("insert into kartu_k(no_kk,nik_kepala,alamat,rtrw,kelu,keca,kabu,create_by)values(:no_kk,:nik_kepala,:alamat,:rtrw,:kelu,:keca,:kabu,:user)");
 	$sql->bindParam(':no_kk',$no_kk);
 	$sql->bindParam(':nik_kepala',$nik_kepala);
 	$sql->bindParam(':alamat',$alamat);
@@ -80,6 +89,7 @@ $data=$list->fetchAll();
 	$sql->bindParam(':kelu',$kelu);
 	$sql->bindParam(':keca',$keca);
 	$sql->bindParam(':kabu',$kabu);
+  $sql->bindParam(':user',$user);
 	$hasil=$sql->execute();
 	  if (!$hasil) die("Salah SQL $simpan");
 	  	echo"<script>alert('Data baru telah tersimpan');

@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if (isset($_SESSION['username'])) {
-  if ($status='admin') {
+  if ($_SESSION['status']=="admin") {
           header('Location: ../admin/dasboard');
         } else {
           header('Location: ../user/dasboard');
@@ -20,8 +20,8 @@ if (isset($_POST['login'])) {
     $hasil=$sql->fetch();
     if ($sql->rowCount()>0) {
         $_SESSION['username']=$hasil['username'];
-        $status=$hasil['username']['status'];
-        if ($status='admin') {
+        $_SESSION['status']=$hasil['status'];
+        if ($_SESSION['status']=="admin") {
           header('Location: ../admin/dasboard');
         } else {
           header('Location: ../user/dasboard');

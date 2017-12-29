@@ -22,17 +22,18 @@ $data=$sql->fetchAll();
 <div class="col-sm-9 main">
 	<div class="container-fluid">
 		<h1 class="page-header">List Kartu Keluarga</h1>
-		<div class="table-responsive">
-			<table class="table table-striped">
+		<div class=" table-responsive">
+			<table width="120%" class="table table-striped table-hover">
 				<tr>
-					<td>NO KK</td>
-					<td>NIK KEPALA KELUARGA</td>
-					<td>ALAMAT</td>
-					<td>RT/RW</td>
-					<td>KELURAHAN</td>
-					<td>KECAMATAN</td>
-					<td>KABUPATEN</td>
-					<td>ANGGOTA KELUARGA</td>
+					<th>NO KK</th>
+					<th>NIK KEPALA KELUARGA</th>
+					<th>ALAMAT</th>
+					<th>RT/RW</th>
+					<th>KELURAHAN</th>
+					<th>KECAMATAN</th>
+					<th>KABUPATEN</th>
+					<th>ANGGOTA KELUARGA</th>
+					<th>OPTION</th>
 				</tr>
 				<?php foreach ($data as $value): ?>
 				<tr>
