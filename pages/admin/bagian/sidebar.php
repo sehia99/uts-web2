@@ -50,14 +50,15 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-        Collapsible Group 3</a>
+        Trash</a>
       </h4>
     </div>
     <div id="collapse3" class="panel-collapse collapse">
-      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.</div>
+      <div class="panel-body">
+        <a href="../trash/trash_ktp.php">Trash Data KTP</a><br>
+        <a href="../trash/trash_kk.php">Trash Data KK</a><br>
+        <a href="../trash/trash_akta.php">Trash Data Akta</a>
+      </div>
     </div>
   </div></div>
 

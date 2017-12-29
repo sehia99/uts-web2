@@ -24,14 +24,14 @@ include '../bagian/sidebar.php';
 include('../bagian/navbar.php');
 
 include '../../../config.php';
-$sql=$query->prepare("select * from akta where tempo=0");
+$sql=$query->prepare("select * from akta where tempo=1");
 $sql->execute();
 $data=$sql->fetchAll();
  ?>
  <div class="col-sm-9 main">
  	<div class="content-wrapper">
  	<div class="container-fluid">
- 	<h1 class="page-header">List Akta</h1>
+ 	<h1 class="page-header">Trash Akta</h1>
  	<div class="table-responsive">
  		<table class="table table-striped">
  			<tr>
@@ -75,8 +75,8 @@ $data=$sql->fetchAll();
   							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Aksi
   							<span class="caret"></span></button>
   							<ul class="dropdown-menu">
-   								<li><a href="../edit/edit_akta.php?nik=<?php echo $value['nik']; ?>">Edit</a></li>
-    							<li><a href="../hapus/temp_hapus/tmp_akta.php?nik=<?php echo $value['nik']; ?>">Delete</a></li>
+   								<li><a href="../restore/restore_akta.php?nik=<?php echo $value['nik']; ?>">Restore</a></li>
+    							<li><a href="../hapus/hapus_akta.php?nik=<?php echo $value['nik']; ?>">Permanent Delete</a></li>
   							</ul>
 						</div></td>
  				</tr>

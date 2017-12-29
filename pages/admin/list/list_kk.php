@@ -44,7 +44,12 @@ $data=$sql->fetchAll();
 					<td><?php echo $value['kelu']; ?></td>
 					<td><?php echo $value['keca']; ?></td>
 					<td><?php echo $value['kabu']; ?></td>
-					<td></td>
+					<td><?php $sqlc=$query->prepare("select count(*) as jumlah from anggota_kk where id_kk=:id_kk") ;
+							$sqlc->bindParam(':id_kk', $value['id_kk']);
+							$sqlc->execute();
+							$datac=$sqlc->fetch();
+							echo $datac['jumlah'];
+							 ?></td>
 					<td><div class="dropdown">
   							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Aksi
   							<span class="caret"></span></button>
