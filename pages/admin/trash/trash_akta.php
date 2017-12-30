@@ -72,13 +72,16 @@ $data=$sql->fetchAll();
  					<td><?php echo $value['nama_ibu']; ?></td>
  					<td><?php echo $value['pendidikan']; ?></td>
  					<td><div class="dropdown">
-  							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Aksi
+  							<button class="btn btn-primary btn-block dropdown-toggle" type="button" data-toggle="dropdown">Aksi
   							<span class="caret"></span></button>
   							<ul class="dropdown-menu">
    								<li><a href="../restore/restore_akta.php?nik=<?php echo $value['nik']; ?>">Restore</a></li>
     							<li><a href="../hapus/hapus_akta.php?nik=<?php echo $value['nik']; ?>">Permanent Delete</a></li>
   							</ul>
 						</div></td>
+            <td>
+              <button></button>
+            </td>
  				</tr>
  			<?php endforeach; ?>
  		</table>

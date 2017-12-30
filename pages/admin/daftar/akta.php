@@ -158,7 +158,7 @@ include('../bagian/navbar.php');
 	  $nama_ibu=$_POST['nama_ibu'];
 	  $pendidikan=$_POST['pendidikan'];
     $user=$_SESSION['username'];
-	  $sql=$query->prepare("insert into akta (nama, tempatL, tanggalL,gender,goldarah,alamat,rtrw,desa,kec,agama,status,pekerjaan,nama_ayah,nama_ibu,pendidikan,create_by) VALUES(:nama,:tempatL,:tanggalL,:gender,:goldarah,:alamat,:rtrw,:desa,:kec,:agama,:status,:pekerjaan,:nama_ayah,:nama_ibu,:pendidikan, :user)");
+	  $sql=$query->prepare("insert into akta (nama, tempatL, tanggalL,gender,goldarah,alamat,rtrw,desa,kec,agama,status_p,pekerjaan,nama_ayah,nama_ibu,pendidikan,create_by) VALUES(:nama,:tempatL,:tanggalL,:gender,:goldarah,:alamat,:rtrw,:desa,:kec,:agama,:status,:pekerjaan,:nama_ayah,:nama_ibu,:pendidikan, :user)");
 	  $sql->bindParam(':nama',$nama);
 	  $sql->bindParam(':tempatL',$tempatL);
 	  $sql->bindParam(':tanggalL',$tanggalL);

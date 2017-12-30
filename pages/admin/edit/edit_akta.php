@@ -134,7 +134,7 @@ if (!isset($_SESSION['username'])) {
 	  $nama_ayah=$_POST['nama_ayah'];
 	  $nama_ibu=$_POST['nama_ibu'];
 	  $pendidikan=$_POST['pendidikan'];
-	  $sql=$query->prepare("update akta set nama=:nama, tempatL=:tempatL, tanggalL=:tanggalL, gender=:gender, goldarah=:goldarah, alamat=:alamat, rtrw=:rtrw, desa=:desa, kec=:kec, agama=:agama, status=:status, pekerjaan=:pekerjaan, nama_ayah=:nama_ayah, nama_ibu=:nama_ibu, pendidikan=:pendidikan, update_at=CURRENT_TIMESTAMP, update_by=:update_by where nik=:nik");
+	  $sql=$query->prepare("update akta set nama=:nama, tempatL=:tempatL, tanggalL=:tanggalL, gender=:gender, goldarah=:goldarah, alamat=:alamat, rtrw=:rtrw, desa=:desa, kec=:kec, agama=:agama, status_p=:status, pekerjaan=:pekerjaan, nama_ayah=:nama_ayah, nama_ibu=:nama_ibu, pendidikan=:pendidikan, update_at=CURRENT_TIMESTAMP, update_by=:update_by where nik=:nik");
 	  $sql->bindParam(':nama',$nama);
 	  $sql->bindParam(':tempatL',$tempatL);
 	  $sql->bindParam(':tanggalL',$tanggalL);

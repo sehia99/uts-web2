@@ -56,6 +56,7 @@ $data=$sql->fetchAll();
   							<ul class="dropdown-menu">
    								<li><a href="../edit/edit_kk.php?id_kk=<?php echo $value['id_kk']; ?>">Edit</a></li>
     							<li><a href="../hapus/temp_hapus/tmp_kk.php?id_kk=<?php echo $value['id_kk']; ?>">Delete</a></li>
+    							<li><a href="list_anggota_kk.php?id_kk=<?php echo $value['id_kk']; ?>">Detail</a></li>
     							<li><a href="../daftar/anggota_kk.php?id_kk=<?php echo $value['id_kk']; ?>">Tambah Anggota</a></li>
   							</ul>
 						</div></td>

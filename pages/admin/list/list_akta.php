@@ -32,7 +32,7 @@ $data=$sql->fetchAll();
  	<div class="content-wrapper">
  	<div class="container-fluid">
  	<h1 class="page-header">List Akta</h1>
- 	<div class="table-responsive">
+ 	<div class="table-condensed">
  		<table class="table table-striped">
  			<tr>
  				<td>NIK</td>
@@ -66,7 +66,7 @@ $data=$sql->fetchAll();
  					<td><?php echo $value['desa']; ?></td>
  					<td><?php echo $value['kec']; ?></td>
  					<td><?php echo $value['agama']; ?></td>
- 					<td><?php echo $value['status']; ?></td>
+ 					<td><?php echo $value['status_p']; ?></td>
  					<td><?php echo $value['pekerjaan']; ?></td>
  					<td><?php echo $value['nama_ayah']; ?></td>
  					<td><?php echo $value['nama_ibu']; ?></td>
