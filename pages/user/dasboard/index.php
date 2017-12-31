@@ -25,15 +25,12 @@ $data_ktp=$sql_k->fetch();
 $sql_kk=$query->prepare("select count(*) as jumlah from kartu_k ");
 $sql_kk->execute();
 $data_kk=$sql_kk->fetch();
-$sql_u=$query->prepare("select count(*) as jumlah from admin ");
-$sql_u->execute();
-$data_user=$sql_u->fetch();
 ?>
 <div class="col-sm-9 main">
 	<div class="container-fluid">
 		<h1 class="page-header">Dasboard</h1>
 		<div class="row">
-          <div class="col-sm-6 col-md-6">
+          <div class="col-sm-4 col-md-4">
             <div class="panel panel-primary">
               <div class="panel-body">
                 <h3 style="text-align: center;">Data KTP</h3>
@@ -44,7 +41,7 @@ $data_user=$sql_u->fetch();
               </div>
             </div>
           </div>
-  <div class="col-sm-6 col-md-6">
+  <div class="col-sm-4 col-md-4">
     <div class="panel panel-primary">
       <div class="panel-body">
         <h3 style="text-align: center;">Data Akta</h3>
@@ -55,7 +52,7 @@ $data_user=$sql_u->fetch();
       </div>
     </div>
   </div>
-  <div class="col-sm-6 col-md-6">
+  <div class="col-sm-4 col-md-4">
     <div class="panel panel-primary">
       <div class="panel-body">
         <h3 style="text-align: center;">Data KK</h3>
@@ -63,21 +60,10 @@ $data_user=$sql_u->fetch();
           Total ada <?php echo $data_kk['jumlah']; ?> data Kartu Keluarga.
         </p>
         <button class="btn btn-primary btn-block"><a <a style="color:white; text-decoration:none;" href="../list/list_kk.php">Lihat Detail</a></button>
-      </div>
+      </div></div>
     </div>
   </div>
-  <div class="col-sm-6 col-md-6">
-    <div class="panel panel-primary">
-      <div class="panel-body">
-        <h3 style="text-align: center;">Data KK</h3>
-        <p style="text-align: center;">
-          Total ada <?php echo $data_user['jumlah']; ?> User.
-        </p>
-        <button class="btn btn-primary btn-block"><a <a style="color:white; text-decoration:none;" href="../list/list_user.php">Lihat Detail</a></button>
-      </div>
-    </div>
-  </div>
-      </div>
+      
 	</div>
 </div>
 </body>

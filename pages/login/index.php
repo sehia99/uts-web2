@@ -13,7 +13,7 @@ if (isset($_POST['login'])) {
   $username=$_POST['username'];
   $password=$_POST['password'];
   try {
-    $sql = $query->prepare("SELECT * FROM admin WHERE username=:username AND password=:password");
+    $sql = $query->prepare("SELECT * FROM admin WHERE username=:username AND password=:password AND tempo=0");
     $sql->bindParam(':username', $username );
     $sql->bindParam(':password', $password );
     $sql->execute();

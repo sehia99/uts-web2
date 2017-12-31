@@ -49,21 +49,6 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#user">
-        User</a>
-      </h4>
-    </div>
-    <div id="user" class="panel-collapse collapse">
-      <div class="panel-body">
-        <a href="../daftar/user.php">Tambah User</a><br>
-        <a href="../list/list_user.php">Lihat User</a><br>
-        <a href="../list/log_user.php">Aktivitas User</a>
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
         Trash</a>
       </h4>
@@ -73,7 +58,6 @@
         <a href="../trash/trash_ktp.php">Trash Data KTP</a><br>
         <a href="../trash/trash_kk.php">Trash Data KK</a><br>
         <a href="../trash/trash_akta.php">Trash Data Akta</a><br>
-        <a href="../trash/trash_user.php">Trash User</a>
       </div>
     </div>
   </div></div>

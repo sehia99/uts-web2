@@ -11,17 +11,17 @@
 	<title></title>
 </head>
 <body>
-<?php  
+<?php 
 include '../bagian/sidebar.php';
 include('../bagian/navbar.php'); 
 include '../../../config.php';
-$sql=$query->prepare("select * from kartu_k where tempo=1");
+$sql=$query->prepare("select * from kartu_k where tempo=0");
 $sql->execute();
 $data=$sql->fetchAll();
- ?>
- <div class="col-sm-9 main">
+?>
+<div class="col-sm-9 main">
 	<div class="container-fluid">
-		<h1 class="page-header">Trash Kartu Keluarga</h1>
+		<h1 class="page-header">List Kartu Keluarga</h1>
 		<div class=" table-responsive">
 			<table width="120%" class="table table-striped table-hover">
 				<tr>
@@ -54,8 +54,10 @@ $data=$sql->fetchAll();
   							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Aksi
   							<span class="caret"></span></button>
   							<ul class="dropdown-menu">
-   								<li><a href="../restore/restore_kk.php?id_kk=<?php echo $value['id_kk']; ?>">Restore</a></li>
-    							<li><a href="../hapus/hapus_kk.php?id_kk=<?php echo $value['id_kk']; ?>">Permanent Delete</a></li>
+   								<li><a href="../edit/edit_kk.php?id_kk=<?php echo $value['id_kk']; ?>">Edit</a></li>
+    							<li><a href="../hapus/temp_hapus/tmp_kk.php?id_kk=<?php echo $value['id_kk']; ?>">Delete</a></li>
+    							<li><a href="list_anggota_kk.php?id_kk=<?php echo $value['id_kk']; ?>">Detail</a></li>
+    							<li><a href="../daftar/anggota_kk.php?id_kk=<?php echo $value['id_kk']; ?>">Tambah Anggota</a></li>
   							</ul>
 						</div></td>
 				</tr>

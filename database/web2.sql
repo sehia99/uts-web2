@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2017 at 03:50 PM
+-- Generation Time: Dec 31, 2017 at 05:05 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -40,16 +40,17 @@ CREATE TABLE `admin` (
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `update_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `create_by` varchar(30) NOT NULL,
-  `update_by` varchar(30) NOT NULL
+  `update_by` varchar(30) NOT NULL,
+  `tempo` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `username`, `password`, `nama`, `email`, `status`, `create_at`, `update_at`, `create_by`, `update_by`) VALUES
-(1, 'admin', 'admin123', 'budi', '', 'admin', '2017-12-30 14:44:01', '0000-00-00 00:00:00', '', ''),
-(2, 'petugas', 'petugas123', 'budi 2', '', 'petugas', '2017-12-30 14:44:01', '0000-00-00 00:00:00', '', '');
+INSERT INTO `admin` (`id`, `username`, `password`, `nama`, `email`, `status`, `create_at`, `update_at`, `create_by`, `update_by`, `tempo`) VALUES
+(1, 'admin', 'admin123', 'budi', '', 'admin', '2017-12-30 14:44:01', '0000-00-00 00:00:00', '', '', 0),
+(2, 'petugas', 'petugas123', 'budi 2', '', 'petugas', '2017-12-31 15:12:43', '0000-00-00 00:00:00', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -154,8 +155,59 @@ CREATE TABLE `kartu_k` (
 --
 
 INSERT INTO `kartu_k` (`id_kk`, `no_kk`, `nik_kepala`, `alamat`, `rtrw`, `kelu`, `keca`, `kabu`, `tempo`, `create_at`, `update_at`, `create_by`, `update_by`) VALUES
-(2, 0, 3, 'adawdawdad', 'awdawdaw', 'awdawdawd', 'awdawd', 'awdadwa', 1, '2017-12-28 15:12:52', '2017-12-28 13:39:20', '', 'admin'),
-(3, 13123, 1, 'adojawdjakljaa', 'ljdlakjdlkawjl', 'jlkadjdlkjaw', 'lkjdlkajdlkwa', 'ajdlakjdlkawj', 0, '2017-12-28 13:53:27', '2017-12-28 13:53:27', 'admin', 'admin');
+(3, 13123, 1, 'adojawdjakljaa', 'ljdlakjdlkawjl', 'jlkadjdlkjaw', 'lkjdlkajdlkwa', 'ajdlakjdlkawj', 0, '2017-12-28 13:53:27', '2017-12-28 13:53:27', 'admin', 'admin'),
+(6, 131414, 2, 'lkajdlkawjd', 'ldlkajdlakj', 'lkjdalkwdjalk', 'lkajdlkajwd', 'lkdjalkjdwa', 0, '2017-12-31 10:06:50', '0000-00-00 00:00:00', 'admin', ''),
+(7, 14512, 5, 'malkmdalkwm', 'ldkamlwkdm', 'lkdmalkwmd', 'lmdalkmwd', 'ldkmalkwmd', 0, '2017-12-31 13:21:41', '0000-00-00 00:00:00', 'admin', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ktp`
+--
+
+CREATE TABLE `ktp` (
+  `id` int(11) NOT NULL,
+  `nik` int(11) NOT NULL,
+  `gambar` varchar(100) NOT NULL,
+  `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `create_by` varchar(30) NOT NULL,
+  `update_by` varchar(30) NOT NULL,
+  `tempo` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ktp`
+--
+
+INSERT INTO `ktp` (`id`, `nik`, `gambar`, `create_at`, `update_at`, `create_by`, `update_by`, `tempo`) VALUES
+(1, 1, '491876.jpg', '2017-12-31 08:08:04', '2017-12-31 08:08:04', 'admin', 'admin', 0),
+(5, 5, '672588.jpg', '2017-12-31 14:56:20', '0000-00-00 00:00:00', 'petugas', '', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `log`
+--
+
+CREATE TABLE `log` (
+  `id` int(11) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `aktivitas` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `log`
+--
+
+INSERT INTO `log` (`id`, `username`, `create_at`, `aktivitas`) VALUES
+(1, 'admin', '2017-12-31 13:21:41', 'menambah data akta baru dengan no kk 14512'),
+(2, 'petugas', '2017-12-31 14:56:20', 'menambah data ktp dengan nik 5'),
+(3, 'admin', '2017-12-31 15:02:34', 'menghapus user dengan id 2'),
+(4, 'admin', '2017-12-31 15:03:30', 'mengembalikan user dengan id 2'),
+(5, 'admin', '2017-12-31 15:12:18', 'menghapus user dengan id 2'),
+(6, 'admin', '2017-12-31 15:12:44', 'mengembalikan user dengan id 2');
 
 --
 -- Indexes for dumped tables
@@ -195,6 +247,18 @@ ALTER TABLE `kartu_k`
   ADD UNIQUE KEY `no_kk` (`no_kk`);
 
 --
+-- Indexes for table `ktp`
+--
+ALTER TABLE `ktp`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `log`
+--
+ALTER TABLE `log`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -226,7 +290,19 @@ ALTER TABLE `foto_ktp`
 -- AUTO_INCREMENT for table `kartu_k`
 --
 ALTER TABLE `kartu_k`
-  MODIFY `id_kk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `ktp`
+--
+ALTER TABLE `ktp`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `log`
+--
+ALTER TABLE `log`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

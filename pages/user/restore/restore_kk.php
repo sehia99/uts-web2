@@ -13,10 +13,10 @@ if (!isset($_SESSION['username'])) {
 </head>
 <body>
 <?php 
-	include '../../../config.php';
-	$aktivitas="mengembalikan data akta dengan nik ".$_GET['nik'];
-	$sql=$query->prepare("update akta set tempo=0 where nik=:nik");
-	$sql->bindParam(':nik',$_GET['nik']);
+include '../../../config.php';
+	$aktivitas="mengembalikan data kk dengan id kk ".$_GET['id_kk'];
+	$sql=$query->prepare("update kartu_k set tempo=0 where id_kk=:id_kk");
+	$sql->bindParam(':id_kk',$_GET['id_kk']);
 	$hasil=$sql->execute();
 	if (!$hasil) {
               die("Salah SQL $simpan");
@@ -26,8 +26,8 @@ if (!isset($_SESSION['username'])) {
               $log->bindParam(':aktivitas',$aktivitas);
               $log->execute();
                   echo"<script>alert('Data Telah Dikembalikan');
-                      window.location = '../list/list_akta.php'; exit();</script>";
+                      window.location = '../list/list_kk.php'; exit();</script>";
             }
- ?>
+?>
 </body>
 </html>

@@ -13,9 +13,9 @@ if (!isset($_SESSION['username'])) {
 </head>
 <body>
 <?php 
-	include '../../../config.php';
-	$aktivitas="mengembalikan data akta dengan nik ".$_GET['nik'];
-	$sql=$query->prepare("update akta set tempo=0 where nik=:nik");
+include '../../../config.php';
+	$aktivitas="mengembalikan data ktp dengan nik ".$_GET['nik'];
+	$sql=$query->prepare("update ktp set tempo=0 where nik=:nik");
 	$sql->bindParam(':nik',$_GET['nik']);
 	$hasil=$sql->execute();
 	if (!$hasil) {
@@ -26,8 +26,8 @@ if (!isset($_SESSION['username'])) {
               $log->bindParam(':aktivitas',$aktivitas);
               $log->execute();
                   echo"<script>alert('Data Telah Dikembalikan');
-                      window.location = '../list/list_akta.php'; exit();</script>";
+                      window.location = '../list/list_ktp.php'; exit();</script>";
             }
- ?>
+?>
 </body>
 </html>
